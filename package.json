@@ -1,0 +1,24 @@
+{
+  "name": "front-end-web-development-with-react",
+  "version": "1.0.0",
+  "description": "\"This is a Cour\"",
+  "main": "index.html",
+  "scripts": {
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite":"lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viniciusniero/Front-End-Web-Development-with-React-by-Universidade-de-Ci-ncia-e-Tecnologia-de-Hong-Kong.git"
+  },
+  "author": "Vinicius Augusto Frazatto Niero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/viniciusniero/Front-End-Web-Development-with-React-by-Universidade-de-Ci-ncia-e-Tecnologia-de-Hong-Kong/issues"
+  },
+  "homepage": "https://github.com/viniciusniero/Front-End-Web-Development-with-React-by-Universidade-de-Ci-ncia-e-Tecnologia-de-Hong-Kong#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
