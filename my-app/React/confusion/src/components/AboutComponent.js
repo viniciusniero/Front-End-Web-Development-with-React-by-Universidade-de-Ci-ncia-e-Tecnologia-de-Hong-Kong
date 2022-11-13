@@ -2,31 +2,34 @@ import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-function RenderLeader({leader}){
-    return(
-        <div className="col-12 mt-5" key={leader.id}>
-            <Media className="container-leader">
-                <Media className="leader-logo">
-                    <Media object src={leader.image} alt={leader.name}/>
-                </Media>
-                <Media body className="col-12">
-                    <Media heading>{leader.name}</Media>
-                    <p>{leader.designation}</p>
-                    <p>{leader.description}</p>
-                </Media>
-            </Media>
-        </div>
-    );
-}
-
 function About(props) {
-    const leaders = props.leaders.map((leader) => {
-      return <RenderLeader leader={leader}/>;
-    });
+
+    const RenderLeader = ({leaders}) => {
+        return (
+            leaders.map((leader) => {
+                return (
+                    <Media key={leader.id} className="row mt-5">
+                        <Media left className="col-12 col-md-2">
+                            <Media src={leader.image} alt={leader.name} />
+                        </Media>
+                        <Media body className="mt-3 mt-md-0 col-12 col-md-10">
+                            <Media heading>
+                                {leader.name}
+                            </Media>
+                            <p>{leader.designation}</p>
+                            <p>{leader.description}</p>
+                        </Media>
+                    </Media>
+                );
+            })
+        );
+    } 
+
+
 
     return(
         <div className="container">
-            <div className="row">
+            <div className="row mt-5">
                 <Breadcrumb>
                     <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
                     <BreadcrumbItem active>About Us</BreadcrumbItem>
@@ -79,9 +82,7 @@ function About(props) {
                     <h2>Corporate Leadership</h2>
                 </div>
                 <div className="col-12">
-                    <Media list>
-                        {leaders}
-                    </Media>
+                    <RenderLeader leaders={props.leaders.leaders}/>
                 </div>
             </div>
         </div>
